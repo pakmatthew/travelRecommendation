@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="traveller_logo.ico" type="image/x-icon" />
+    <title>Traveller</title>
+    <link rel="stylesheet" href="travel_recommendation.css" />
+    <script src="travel_recommendation.js" defer></script>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo" style="display:flex; align-items:center;">
+            <img src="traveller_logo.png" alt="Traveller Logo" class="logo-img" />
+            <span style="color: #222; font-weight: bold; font-size: 24px; margin-left: 8px;">
+                Traveller
+            </span>
+        </div> 
+        <ul>
+            <li><a href="#home" onclick="showPage('home')">Home</a></li>
+            <li><a href="#about" onclick="showPage('about')">About Us</a></li>
+            <li><a href="#contact" onclick="showPage('contact')">Contact Us</a></li>
+        </ul>
+        <div id="navSearch" class="nav-search">
+            <div id="navSearchInput" class="nav-search-input">
+                <input type="text" id="searchInput" placeholder="Enter a keyword" list="destinations" />
+                <button id="searchBtn" onclick="fetchAndSearch()">Search</button>
+                <button id="clearBtn" onclick="resetSearch()">Clear</button>
+            </div>
+            <div id="navSearchResults" class="nav-search-results"></div>
+        </div>
+    </nav>
+
+    <div id="home" class="page">
+        <section class="banner">Find Your Next Adventure!</section>
+        <div class="content-area">
+            <p>
+                Welcome to Traveller! Discover your next adventure with our curated travel recommendations.
+                Whether you're looking for breathtaking destinations, exciting deals, or helpful travel tips,
+                our website is your guide to memorable journeys worldwide. Start exploring today and find your perfect travel inspiration!
+            </p>
+        </div>
+    </div>
+
+    <div id="about" class="page" style="display:none;">
+        <div class="content-area">
+            <h1>About Traveller</h1>
+            <p>Traveller is dedicated to helping people explore the world with ease and excitement. Our mission is to make travel accessible, enjoyable, and unforgettable for everyone.</p>
+            
+            <h2>Meet Our Team</h2>
+            <ul class="team-list">
+                <li><strong>Alice Chen</strong> - Founder & CEO</li>
+                <li><strong>David Lee</strong> - Chief Travel Advisor</li>
+                <li><strong>Sophia Wong</strong> - Customer Service Manager</li>
+                <li><strong>Michael Chen</strong> - Marketing Lead</li>
+                <li><strong>Emily Zhang</strong> - Content Creator</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="contact" class="page" style="display:none;">
+        <div class="content-area">
+            <h1>Contact Us</h1>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
